@@ -98,6 +98,31 @@ Within 4 KM</p>
 <footer>
 © 2026 Medicare Pharmacy
 </footer>
+<section class="card">
+<h2>Feedback</h2>
 
+<input type="text" id="userName" placeholder="Your Name"><br><br>
+
+<textarea id="feedback" placeholder="Write your feedback"></textarea><br><br>
+
+<button onclick="sendFeedback()">Submit</button>
+
+<p id="msg"></p>
+
+</section>
+
+<script>
+function sendFeedback(){
+let name = document.getElementById("userName").value;
+let feedback = document.getElementById("feedback").value;
+
+if(name=="" || feedback==""){
+document.getElementById("msg").innerHTML="Please fill all details";
+}
+else{
+document.getElementById("msg").innerHTML="Thank you for your feedback!";
+}
+}
+</script>
 </body>
 </html>
