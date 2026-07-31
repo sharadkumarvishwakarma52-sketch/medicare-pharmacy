@@ -101,28 +101,18 @@ Within 4 KM</p>
 <section class="card">
 <h2>Feedback</h2>
 
-<input type="text" id="userName" placeholder="Your Name"><br><br>
+<form action="https://formspree.io/f/xpqvegdr" method="POST">
 
-<textarea id="feedback" placeholder="Write your feedback"></textarea><br><br>
+<input type="text" name="name" placeholder="Your Name" required>
 
-<button onclick="sendFeedback()">Submit</button>
+<input type="email" name="email" placeholder="Your Email" required>
 
-<p id="msg"></p>
+<textarea name="message" placeholder="Write your feedback" required></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
 
 </section>
-
-<script>
-function sendFeedback(){
-let name = document.getElementById("userName").value;
-let feedback = document.getElementById("feedback").value;
-
-if(name=="" || feedback==""){
-document.getElementById("msg").innerHTML="Please fill all details";
-}
-else{
-document.getElementById("msg").innerHTML="Thank you for your feedback!";
-}
-}
-</script>
 </body>
 </html>
