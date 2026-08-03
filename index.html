@@ -114,5 +114,35 @@ Within 4 KM</p>
 </form>
 
 </section>
+  <section style="padding:20px;">
+  <h2>🔍 Search Medicine</h2>
+
+  <input type="text" id="searchBox"
+         placeholder="Medicine Name"
+         onkeyup="searchMedicine()"
+         style="padding:10px;width:80%;max-width:300px;">
+
+  <ul id="medicineList" style="list-style:none;padding:0;">
+    <li>Paracetamol 500</li>
+    <li>Dolo 650</li>
+    <li>Cetirizine</li>
+    <li>Azithromycin 500</li>
+    <li>Vitamin C</li>
+    <li>ORS Powder</li>
+  </ul>
+</section>
+
+<script>
+function searchMedicine() {
+  let input = document.getElementById("searchBox").value.toUpperCase();
+  let ul = document.getElementById("medicineList");
+  let li = ul.getElementsByTagName("li");
+
+  for (let i = 0; i < li.length; i++) {
+    let txt = li[i].textContent || li[i].innerText;
+    li[i].style.display = txt.toUpperCase().indexOf(input) > -1 ? "" : "none";
+  }
+}
+</script>
 </body>
 </html>
